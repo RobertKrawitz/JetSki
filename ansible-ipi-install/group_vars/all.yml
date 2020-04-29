@@ -1,0 +1,19 @@
+ocpinv_file: "{{ playbook_dir }}/ocpinv.json"
+cloud_name: cloud10
+lab_name: scale
+# Default lab password to your nodes so that keys can be added automatically for future access
+ansible_ssh_pass: password
+# Leave default
+ansible_ssh_key: "{{ ansible_user_dir }}/.ssh/id_rsa"
+version: "4.3.5"
+build: "ga"
+pullsecret: ''
+hammer_host: hwstore.example.com
+# The automation automatically rebuilds provisioner node to rhel 8.1 if not already rhel 8.1, however you can also force a reprovsioning of the provisioner node for redeployment scenarios
+rebuild_provisioner: false
+alias:
+#lab specific vars
+  lab_url: "http://quads.alias.bos.scalelab.redhat.com"
+scale:
+# lab specific vars
+  lab_url: "http://quads.rdu2.scalelab.redhat.com"

@@ -281,6 +281,11 @@ rebuild_provisioner: false
 # However that behaviour can be overrided by explicitly settign the desired number of workers here. For a masters only deploy,
 # set worker_count to 0
 worker_count: 0
+# For IPv4: number of bits in the network portion of the host network.
+# The number of pods per node you can create is slightly less than
+# 2^(32 - host_prefix).  Unless you want to run more than 500 total
+# pods per node, leave this alone.
+host_prefix_bits: 23
 alias:
 #lab specific vars, leave default
   lab_url: "http://quads.alias.bos.scalelab.redhat.com"
